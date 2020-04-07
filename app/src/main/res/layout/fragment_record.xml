@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark"
+    tools:context=".RecordFragment">
+
+    <ImageView
+        android:id="@+id/app_name"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_voiceme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <com.agrawalsuneet.squareloaderspack.loaders.WaveLoader
+        android:id="@+id/audioRecordView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:wave_animDuration="500"
+        app:wave_delayDuration="100"
+        app:wave_interpolator="@android:anim/linear_interpolator"
+        app:wave_isSingleColor="true"
+        app:wave_noOfDots="18"
+        app:wave_rectColor="@color/blue"
+        app:wave_rectDistance="8dp"
+        app:wave_rectHeight="40dp"
+        app:wave_rectWidth="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/record_filename"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name"/>
+
+    <TextView
+        android:id="@+id/record_filename"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto_light"
+        android:text="Press the mic button \n to start recording"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/timer_record"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/audioRecordView" />
+
+    <Chronometer
+        android:id="@+id/timer_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/blue"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_record"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/record_filename" />
+
+    <ImageButton
+        android:id="@+id/btn_record"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_record_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timer_record" />
+
+    <ImageButton
+        android:id="@+id/btn_record_list"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:padding="18dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_playlist"
+        app:layout_constraintBottom_toBottomOf="@id/btn_record"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_record"
+        app:layout_constraintTop_toTopOf="@id/btn_record" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
